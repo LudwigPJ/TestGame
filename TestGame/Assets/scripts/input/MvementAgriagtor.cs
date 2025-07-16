@@ -16,6 +16,8 @@ namespace Assets.scripts.input
         private void Update()
         {
             playerControlold.setMovement(joystickController.Direction);
+
+            
         }
 
 

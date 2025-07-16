@@ -7,6 +7,7 @@ public class PlayerControlOld : MonoBehaviour
     [SerializeField]private float movement; 
     private Vector2 movementDirection;
     private Rigidbody2D rb;
+    [SerializeField] private HealPoints healPoints;
 
     private void Awake()
     {
@@ -23,6 +24,15 @@ public class PlayerControlOld : MonoBehaviour
     void Start()
     {
         
+            healPoints.onDeath.AddListener(() => 
+            {
+                Destroy(gameObject);
+            });
+        
+    }
+    private void OnDisable()
+    {
+        healPoints.onDeath.RemoveAllListeners();
     }
 
     // Update is called once per frame
