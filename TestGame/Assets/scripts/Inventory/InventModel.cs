@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventModel : MonoBehaviour
 {
-    public Dictionary<string,int> items;
+    public Dictionary<string,int> items = new();
 
 
     public event System.Action OnInventoryChanged;
